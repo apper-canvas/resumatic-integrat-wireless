@@ -1,0 +1,90 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'react-toastify/dist/ReactToastify.css';
+
+:root {
+  --primary: #3b82f6;
+  --primary-light: #60a5fa;
+  --primary-dark: #2563eb;
+  --secondary: #8b5cf6;
+  --secondary-light: #a78bfa;
+  --secondary-dark: #7c3aed;
+  --accent: #f43f5e;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-surface-50 text-surface-900 dark:bg-surface-900 dark:text-surface-50;
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark focus:ring-primary;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-secondary-dark focus:ring-secondary;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-white hover:bg-accent/90 focus:ring-accent;
+  }
+  
+  .btn-outline {
+    @apply border border-surface-300 dark:border-surface-700 hover:bg-surface-100 dark:hover:bg-surface-800 focus:ring-surface-300;
+  }
+  
+  .input-field {
+    @apply w-full p-3 rounded-lg border border-surface-300 dark:border-surface-700 
+           bg-white dark:bg-surface-800 text-surface-900 dark:text-surface-100
+           focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent
+           placeholder:text-surface-400;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-surface-800 rounded-xl shadow-card p-6 transition-all;
+  }
+  
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8;
+  }
+  
+  .form-label {
+    @apply block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1;
+  }
+  
+  .resume-template {
+    @apply relative overflow-hidden rounded-xl border-2 transition-all duration-300 cursor-pointer;
+  }
+  
+  .resume-template-selected {
+    @apply border-primary shadow-xl;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+}
