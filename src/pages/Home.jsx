@@ -127,7 +127,8 @@ const Home = () => {
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center">
               <div className={`w-10 h-10 rounded-full flex items-center justify-center mr-3 ${currentStep === 1 ? 'bg-primary text-white' : 'bg-surface-200 dark:bg-surface-700 text-surface-500'}`}>
-                <steps[currentStep - 1].icon className="w-5 h-5" />
+                {/* Extract the icon component before using it in JSX */}
+                {React.createElement(steps[currentStep - 1].icon, { className: "w-5 h-5" })}
               </div>
               <div>
                 <div className="font-semibold text-surface-900 dark:text-white">
